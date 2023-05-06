@@ -1,0 +1,7 @@
+{
+  "name": "Reciclapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
