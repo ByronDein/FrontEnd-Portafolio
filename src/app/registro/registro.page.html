@@ -17,7 +17,8 @@
       </ion-segment-button>
     </ion-segment>
 <!--este comando indica que abrir al momento de elegir una opción de segmento dando una condición If-->
-<ion-card *ngIf="selectTabs == 'Cliente'">
+  <form (ngSubmit)="onSubmitTemplate()" [formGroup]="formularioRegistroC">
+  <ion-card *ngIf="selectTabs == 'Cliente'">
   <ion-card-header>
     <ion-card-title>Registro</ion-card-title>
   </ion-card-header>
@@ -25,27 +26,30 @@
     <!--se crea el campo de usuario-->
       <ion-item>
         <ion-label position="floating">Nombre</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="nombre" type="text" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input formControlName="password" type="password" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Correo</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="email"
+                  formControlName="email"
+                  pattern="/[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"
+                  required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Telefono</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName="telefono" type="number" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Fecha de nacimiento</ion-label>
-        <ion-input></ion-input>
+        <h1>Fecha de nacimiento</h1>
+        <ion-input formControlName="fecha" type="date" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Dirección</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input formControlName="dirección" type="text" required></ion-input>
       </ion-item>
     <br>
     <ion-button>
@@ -53,7 +57,8 @@
     </ion-button>
   </ion-card-content>
   </ion-card>
-  
+  </form>
+  <form [formGroup]="formularioRegistroC">
   <ion-card *ngIf="selectTabs == 'Empresa'">
     <ion-card-header>
       <ion-card-title>Registro</ion-card-title>
@@ -62,23 +67,26 @@
       <!--se crea el campo de Empresa-->
         <ion-item>
           <ion-label position="floating">Nombre de Empresa</ion-label>
-          <ion-input></ion-input>
+          <ion-input formControlName="nombreE" type="text" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input formControlName="passwordE" type="password" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Correo</ion-label>
-          <ion-input></ion-input>
+          <ion-label position="floating" >Correo</ion-label>
+          <ion-input type="email"
+          formControlName="emailE"
+          pattern="/[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"
+          required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Telefono</ion-label>
-          <ion-input></ion-input>
+          <ion-input formControlName="telefonoE" type="number" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Dirección</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input  formControlName="direccionE" type="text" required></ion-input>
         </ion-item>
         <!--Checbox-->
         <!--ion change mantiene el chackbox separado-->      
@@ -91,4 +99,5 @@
       </ion-button>
     </ion-card-content>
     </ion-card>
+  </form>
 </ion-content>

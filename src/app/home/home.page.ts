@@ -8,9 +8,5 @@ import { Router } from '@angular/router';
 export class HomePage {
   //se llama a la libreria en el constructor
   constructor(private router : Router) {}
-  //se crea el direccionamiento a registro
-    Registro(){
-      this.router.navigate(['/registro'])
-    }
 
 }
