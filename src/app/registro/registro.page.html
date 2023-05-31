@@ -5,7 +5,7 @@
   </ion-back-button>
 </ion-buttons>
 </ion-header>
-
+<!--npm run dev (inicializa la base de datos)-->
 <ion-content [fullscreen]="true">
     <!--aqui se genera la barra para elegir que tipo de usuario crear-->
     <ion-segment [(ngModel)]="selectTabs">
@@ -17,7 +17,7 @@
       </ion-segment-button>
     </ion-segment>
 <!--este comando indica que abrir al momento de elegir una opción de segmento dando una condición If-->
-  <form (ngSubmit)="onSubmitTemplate()" [formGroup]="formularioRegistroC">
+  <form [formGroup]="formularioRegistroC">
   <ion-card *ngIf="selectTabs == 'Cliente'">
   <ion-card-header>
     <ion-card-title>Registro</ion-card-title>
@@ -43,22 +43,32 @@
         <ion-label position="floating">Telefono</ion-label>
         <ion-input formControlName="telefono" type="number" required></ion-input>
       </ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
       <ion-item>
-        <h1>Fecha de nacimiento</h1>
         <ion-input formControlName="fecha" type="date" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Dirección</ion-label>
-        <ion-input formControlName="dirección" type="text" required></ion-input>
+        <ion-input formControlName="direccion" type="text" required></ion-input>
       </ion-item>
+        
+      <ion-list>
+      <ion-item>
+      <ion-select formControlName="comunac" aria-label="comunas" placeholder="Comunas">
+      <ion-select-option value="Cerro Navia">Cerro Navia</ion-select-option>
+      <ion-select-option value="Maipu">Maipu</ion-select-option>
+      <ion-select-option value="Providencia">Providencia</ion-select-option>
+      </ion-select>
+      </ion-item>
+      </ion-list>
     <br>
-    <ion-button>
+    <ion-button (click)="registrar()">
       Registrar
     </ion-button>
   </ion-card-content>
   </ion-card>
   </form>
-  <form [formGroup]="formularioRegistroC">
+  <form [formGroup]="formularioRegistroE">
   <ion-card *ngIf="selectTabs == 'Empresa'">
     <ion-card-header>
       <ion-card-title>Registro</ion-card-title>
@@ -67,11 +77,11 @@
       <!--se crea el campo de Empresa-->
         <ion-item>
           <ion-label position="floating">Nombre de Empresa</ion-label>
-          <ion-input formControlName="nombreE" type="text" required></ion-input>
+          <ion-input formControlName="nombreE" type="text" max="20" min="8" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="passwordE" type="password" required></ion-input>
+          <ion-input formControlName="passwordE" type="password" min="6" max="20" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating" >Correo</ion-label>
@@ -82,19 +92,31 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Telefono</ion-label>
-          <ion-input formControlName="telefonoE" type="number" required></ion-input>
+          <ion-input formControlName="telefonoE" type="tel"  min="11" max="12" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Dirección</ion-label>
-          <ion-input  formControlName="direccionE" type="text" required></ion-input>
+          <ion-input  formControlName="direccionE" type="text" required min="8" max="20"></ion-input>
         </ion-item>
+        <!--ion list genera una lista de las comunas-->
+        <ion-list>
+          <ion-item>
+          <ion-select formControlName="comunaE" aria-label="comunas" placeholder="Comunas">
+          <ion-select-option value="Cerro Navia">Cerro Navia</ion-select-option>
+          <ion-select-option value="Maipu">Maipu</ion-select-option>
+          <ion-select-option value="Providencia">Providencia</ion-select-option>
+          </ion-select>
+          </ion-item>
+        </ion-list>
         <!--Checbox-->
         <!--ion change mantiene el chackbox separado-->      
-        <h1>¿Cuenta con medio de transporte?</h1>
-        <ion-checkbox [(ngModel)]="checkbox1" (ionChange)="checkbox2 = !checkbox1">Si</ion-checkbox>
-        <ion-checkbox [(ngModel)]="checkbox2" (ionChange)="checkbox1 = !checkbox2">No</ion-checkbox>
+        <ion-label position="floating">¿Cuenta con medio de transporte?</ion-label>
+        <br>
+        <ion-checkbox [(ngModel)]="checkbox1" (ionChange)="checkbox2 = !checkbox1" >Si</ion-checkbox>
+        <ion-checkbox [(ngModel)]="checkbox2" (ionChange)="checkbox1 = !checkbox2" >No</ion-checkbox>
+
       <br>
-      <ion-button>
+      <ion-button (click)="registrarE()">
         Registrar
       </ion-button>
     </ion-card-content>

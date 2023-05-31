@@ -18,8 +18,11 @@
   <ion-button expand="block" [routerLink]="['/formulario']">
     Crear Tickets
   </ion-button>
-  <ion-button expand="block">
+  <ion-button expand="block" [routerLink]="['/historial']">
     Historial de Tickets
+  </ion-button>
+  <ion-button expand="block" color="red" (click)="cerrar()">
+    Cerrar sesion
   </ion-button>
   </ion-card>
 </ion-content>
