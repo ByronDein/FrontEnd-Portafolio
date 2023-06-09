@@ -18,7 +18,24 @@ export class RegistroPage implements OnInit {
   //se crea la variable select tabs
   selectTabs = 'recent';
   //Funcion checkbox
+<<<<<<< HEAD
   transporteReg: boolean = false;
+=======
+  checkbox1 = false;
+  checkbox2 = true;
+  onClickCheckbox1() {
+    if(this.checkbox2 = false){
+    this.checkbox1 = true;
+    }
+    else
+    this.checkbox1 = false;
+  }
+  onClickCheckbox2() {
+    if(this.checkbox1 = false){
+      this.checkbox2 = true;
+    }
+  }
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
   //se le coloca los campos a los formularios con la validación de no tener campos vacios
   //inicializa los imports
   constructor(public fb: FormBuilder,private router: Router, private http: HttpClient, private alertController: AlertController) { 
@@ -34,6 +51,7 @@ export class RegistroPage implements OnInit {
     this.formularioRegistroE = this.fb.group({
       'nombreE' : new FormControl("", Validators.required),
       'passwordE' : new FormControl ("", Validators.required),
+<<<<<<< HEAD
       'emailE' : new FormControl ("", Validators.required),
       'fechaE' : new FormControl ("", Validators.required),
       'direccionE' : new FormControl ("", Validators.required),
@@ -41,6 +59,12 @@ export class RegistroPage implements OnInit {
       'comunaE' : new FormControl ("", Validators.required),
       'Objetos' : new FormControl ("", Validators.required),
       'transporte' : new FormControl ("", Validators.required)
+=======
+      'correoE' : new FormControl ("", Validators.required),
+      'fechaE' : new FormControl ("", Validators.required),
+      'direccionE' : new FormControl ("", Validators.required),
+      'telefonoE' : new FormControl ("", Validators.required)
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
     })
 
   }
@@ -48,6 +72,7 @@ export class RegistroPage implements OnInit {
   async registrar() {
     const api = 'http://localhost:3000/usuarios';
     const usuarios = {
+<<<<<<< HEAD
       nombre: this.formularioRegistroC.value.nombre,
       contrasenia: this.formularioRegistroC.value.password,
       correo: this.formularioRegistroC.value.correo,
@@ -61,6 +86,20 @@ export class RegistroPage implements OnInit {
     try {
       console.log(usuarios);
       const response = await this.http.post(api, usuarios).toPromise();
+=======
+      nombre: 'nombre',
+      contrasenia: 'password',
+      correo: 'correo',
+      foto: 'asdas.jpg',
+      direccion: 'direccion',
+      telefono: 'telefono',
+      comuna: 'comunac',
+      fecha_nacimiento:'fecha',
+
+    };
+    try {
+      const response = await this.http.post(api, usuarios);
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
       console.log(response);
       const alert = await this.alertController.create({
         header: 'Registro exitoso',
@@ -79,6 +118,7 @@ export class RegistroPage implements OnInit {
       await alert.present();
     }
   }
+<<<<<<< HEAD
 
   //Funcion registrar usuario empresa
   async registrarE() {
@@ -102,6 +142,19 @@ export class RegistroPage implements OnInit {
     };
     try {
       console.log(usuarios);
+=======
+  async registrarE() {
+    const api = 'http://localhost:3000/usuarios';
+    const usuarios = {
+      nombre: '',
+      contrasenia: '',
+      correo: '',
+      direccion: '',
+      tranporte:'',
+      objetoreciclaje:'',
+    };
+    try {
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
       const response = await this.http.post(api, usuarios).toPromise();
       console.log(response);
       const alert = await this.alertController.create({
@@ -121,7 +174,23 @@ export class RegistroPage implements OnInit {
       await alert.present();
     }
   }
+<<<<<<< HEAD
 
+=======
+  
+
+
+  //se obtienen los datos del usuario
+  async obtenerUsuarios() {
+    const api = 'http://localhost:3000/usuarios';
+    try {
+      const response = await this.http.get(api).toPromise();
+      console.log(response);
+      } catch (error) {
+      console.log(error);
+    }
+  }
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
   ngOnInit() {
   }
 

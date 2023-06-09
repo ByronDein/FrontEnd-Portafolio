@@ -34,8 +34,14 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Correo</ion-label>
+<<<<<<< HEAD
         <ion-input type="text"
                   formControlName="correo"
+=======
+        <ion-input type="email"
+                  formControlName="email"
+                  pattern="/[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
                   required></ion-input>
       </ion-item>
       <ion-item>
@@ -44,12 +50,20 @@
       </ion-item>
       <ion-label>Fecha de nacimiento</ion-label>
       <ion-item>
+<<<<<<< HEAD
         <ion-input formControlName="fecha" type="date" format="DD-MM-YYYY" required></ion-input>
+=======
+        <ion-input formControlName="fecha" type="date" required></ion-input>
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
       </ion-item>
       <ion-item>
         <ion-label position="floating">Dirección</ion-label>
         <ion-input formControlName="direccion" type="text" required></ion-input>
       </ion-item>
+<<<<<<< HEAD
+=======
+        
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
       <ion-list>
       <ion-item>
       <ion-select formControlName="comunac" aria-label="comunas" placeholder="Comunas">
@@ -85,6 +99,10 @@
           <ion-label position="floating" >Correo</ion-label>
           <ion-input type="email"
           formControlName="emailE"
+<<<<<<< HEAD
+=======
+          pattern="/[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
           required></ion-input>
         </ion-item>
         <ion-item>
@@ -105,6 +123,7 @@
           </ion-select>
           </ion-item>
         </ion-list>
+<<<<<<< HEAD
         <ion-label position="floating">Objeto de Reciclaje</ion-label>
         <ion-list>
           <ion-item>
@@ -127,6 +146,15 @@
           </ion-select>
           </ion-item>
         </ion-list>
+=======
+        <!--Checbox-->
+        <!--ion change mantiene el chackbox separado-->      
+        <ion-label position="floating">¿Cuenta con medio de transporte?</ion-label>
+        <br>
+        <ion-checkbox [(ngModel)]="checkbox1" (ionChange)="checkbox2 = !checkbox1" >Si</ion-checkbox>
+        <ion-checkbox [(ngModel)]="checkbox2" (ionChange)="checkbox1 = !checkbox2" >No</ion-checkbox>
+
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
       <br>
       <ion-button (click)="registrarE()">
         Registrar

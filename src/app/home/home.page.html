@@ -1,7 +1,11 @@
 <ion-header [translucent]="true">
 </ion-header>
 
+<<<<<<< HEAD
 <ion-content [fullscreen]="true" class="background">
+=======
+<ion-content [fullscreen]="true">
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
   <ion-segment [(ngModel)]="selectTabs">
     <ion-segment-button value="Cliente">
       <ion-label>Cliente</ion-label>
@@ -11,15 +15,25 @@
     </ion-segment-button>
   </ion-segment>
   <!--Cuadro del login formato card-->
+<<<<<<< HEAD
    <ion-card *ngIf="selectTabs == 'Cliente'" color="#237300">
+=======
+   <ion-card *ngIf="selectTabs == 'Cliente'">
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
     <ion-card-header>
       <ion-card-title>Login</ion-card-title>
     </ion-card-header>
     <ion-card-content>
         <ion-item>
           <ion-label position="floating">Usuario</ion-label>
+<<<<<<< HEAD
           <ion-input type="text"
           [(ngModel)]="email"
+=======
+          <ion-input type="email"
+          [(ngModel)]="email"
+          pattern="/[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
           required></ion-input>
         </ion-item>
         <ion-item>
@@ -44,17 +58,29 @@
         <ion-item>
           <ion-label position="floating">Usuario</ion-label>
           <ion-input type="email"
+<<<<<<< HEAD
           [(ngModel)]="emailEmp"
+=======
+          id="emailE"
+          pattern="/[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]*\.([a-z]{2,4})$/"
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
           required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
+<<<<<<< HEAD
           <ion-input type="password" 
           [(ngModel)]="passEmp"
           required></ion-input>
         </ion-item>
       <br>
       <ion-button type="submit" (click)="CuentaE()">
+=======
+          <ion-input type="password" required></ion-input>
+        </ion-item>
+      <br>
+      <ion-button type="submit">
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
         Ingresar
       </ion-button>
       <ion-button [routerLink]="['/registro']">

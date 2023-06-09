@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./editar.page.scss'],
 })
 export class EditarPage implements OnInit {
+<<<<<<< HEAD
   //variables a editar
   Nombre: any;
   password: any;
@@ -32,6 +33,22 @@ export class EditarPage implements OnInit {
    async actualizar(){
     
    }
+=======
+  forAct: FormGroup;
+  constructor(public fb: FormBuilder,private router: Router, private http: HttpClient, private alertController: AlertController) {
+    this.forAct = this.fb.group({
+      'nombre' : new FormControl("", Validators.required),
+      'password' : new FormControl ("", Validators.required),
+      'direccion' : new FormControl ("", Validators.required),
+      'telefono' : new FormControl ("", Validators.required),
+      'comunac' : new FormControl ("", Validators.required)
+    })
+   }
+   async actualizar(){
+
+   }
+
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
   ngOnInit() {
   }
 

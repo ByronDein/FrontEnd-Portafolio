@@ -1,15 +1,28 @@
 <ion-header [translucent]="true">
+<<<<<<< HEAD
   <ion-back-button>   
   </ion-back-button>
+=======
+  <ion-toolbar>
+    <ion-title>editar</ion-title>
+  </ion-toolbar>
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+<<<<<<< HEAD
       <ion-title size="large">Editar</ion-title>
     </ion-toolbar>
   </ion-header>
   <form>
+=======
+      <ion-title size="large">editar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form [formGroup]="forAct">
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
     <ion-card>
     <ion-card-header>
       <ion-card-title>Perfil</ion-card-title>
@@ -18,6 +31,7 @@
       <!--se crea el campo de usuario-->
         <ion-item>
           <ion-label position="floating">Nombre</ion-label>
+<<<<<<< HEAD
           <ion-input [(ngModel)]="Nombre"  value="{{nomb}}"></ion-input>
         </ion-item>
         <ion-item>
@@ -35,6 +49,25 @@
         <ion-list>
         <ion-item>
         <ion-select [(ngModel)]="comunac" aria-label="comunas" value="{{comun}}">
+=======
+          <ion-input formControlName="nombre" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono</ion-label>
+          <ion-input formControlName="telefono" type="tel" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Dirección</ion-label>
+          <ion-input formControlName="direccion" type="text" required></ion-input>
+        </ion-item>
+        <ion-list>
+        <ion-item>
+        <ion-select formControlName="comunac" aria-label="comunas" placeholder="Comunas">
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
         <ion-select-option value="Cerro Navia">Cerro Navia</ion-select-option>
         <ion-select-option value="Maipu">Maipu</ion-select-option>
         <ion-select-option value="Providencia">Providencia</ion-select-option>

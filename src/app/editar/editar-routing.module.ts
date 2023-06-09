@@ -10,8 +10,11 @@ const routes: Routes = [
   }
 ];
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

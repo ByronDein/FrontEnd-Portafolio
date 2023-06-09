@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component, OnInit, Input } from '@angular/core';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-usuario',
@@ -6,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./usuario.page.scss'],
 })
 export class UsuarioPage implements OnInit {
+<<<<<<< HEAD
   nomb: String;
   dire: String;
   comun: string;
@@ -30,12 +35,21 @@ export class UsuarioPage implements OnInit {
     }
 
   }
+=======
+
+  constructor(private router : Router) { }
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
 
   cerrar(){
     localStorage.clear();
     this.router.navigate(['/home'])
   }
   ngOnInit() {
+<<<<<<< HEAD
     
   }
+=======
+  }
+
+>>>>>>> c321230f924e535e19615842903f2a8302512c7b
 }
