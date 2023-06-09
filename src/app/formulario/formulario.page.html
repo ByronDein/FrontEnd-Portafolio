@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-back-button>   
+  </ion-back-button>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form>
+    <ion-card-header>
+      <ion-card-title>Formulario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!--se crea el campo de usuario-->
+      <ion-label position="floating">Objeto de Reciclaje</ion-label>
+      <ion-list>
+        <ion-item>
+        <ion-select [(ngModel)]="Objetos" aria-label="Objetos" placeholder="Objetos">
+        <ion-select-option value="Papel">Papel</ion-select-option>
+        <ion-select-option value="Plastico">Plastico</ion-select-option>
+        <ion-select-option value="Carton">Carton</ion-select-option>
+        <ion-select-option value="Otros">Otros</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-label [(ngModel)]="Cantid" position="floating">Cantidad</ion-label>
+        <ion-input type="number" required></ion-input>
+      </ion-item>
+        <ion-item>
+          <ion-label [(ngModel)]="Direc" position="floating">Dirección</ion-label>
+          <ion-input type="text" required></ion-input>
+        </ion-item>
+        <ion-label position="floating">Tamaño</ion-label>
+      <ion-list>
+        <ion-item>
+        <ion-select [(ngModel)]="Dims" aria-label="Dims" placeholder="">
+        <ion-select-option value="Papel">Grande</ion-select-option>
+        <ion-select-option value="Plastico">Mediano</ion-select-option>
+        <ion-select-option value="Carton">Pequeño</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-list>
+      <br>
+      <ion-button>
+        Enviar ticket
+      </ion-button>
+    </ion-card-content>
+    </form>
+</ion-content>
